@@ -1,0 +1,23 @@
+.detailLink
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color:#d8b00f;
+    color: white;
+}
+
+.detailButtonDiv
+{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.inline_block
+{
+    display: inline-block;
+}

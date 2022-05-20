@@ -1,0 +1,7 @@
+.content-div {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e3d105, #f79503);
+}

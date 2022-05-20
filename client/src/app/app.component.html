@@ -1,0 +1,29 @@
+<!-- body -->
+<div class="main-layout landing" *ngIf="!hasRoute('login') && !hasRoute('register')">
+  <!-- loader  -->
+  <!--<div class="loader_bg">
+    <div class="loader"><img src="../assets/images/loading.gif" alt="" /></div>
+  </div>-->
+
+  <div class="wrapper">
+    <!-- end loader -->
+
+    <div class="sidebar">
+      <!-- Sidebar  -->
+      <app-nav></app-nav>
+    </div>
+      <div id="content">
+        <!-- header -->
+        <app-header></app-header>
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+      </div>
+      <!-- footer -->
+      <app-footer></app-footer>
+  </div>
+  <div class="overlay"></div>
+  <!-- Javascript files-->
+</div>
+
+<div class="content-div" *ngIf="hasRoute('login') || hasRoute('register')">
+  <router-outlet></router-outlet>
+</div>

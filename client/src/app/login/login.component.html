@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="forms">
+    <div class="form login">
+      <span class="title">Login</span>
+      <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+        <div class="input-field">
+          <input name="credentials" [(ngModel)]="model.credential" type="text" placeholder="Enter your email/username" required>
+          <i class="uil uil-envelope icon"></i>
+        </div>
+        <div class="input-field">
+          <input name="password" [(ngModel)]="model.password" type="password" class="password" placeholder="Enter your password" required>
+          <i class="uil uil-lock icon"></i>
+          <i class="uil uil-eye-slash showHidePw"></i>
+        </div>
+        <div class="checkbox-text">
+          <div class="checkbox-content">
+            <input type="checkbox" id="logCheck">
+            <label for="logCheck" class="text">Remember me</label>
+          </div>
+
+          <a href="#" class="text">Forgot password?</a>
+        </div>
+
+        <div class="login-button-div">
+          <button class="login-button" type="submit" value="Login">Login Now</button>
+        </div>
+      </form>
+
+      <div class="login-signup">
+        <span class="text">
+          Not a member?
+          <a routerLink="/register" class="text signup-link">Signup now</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

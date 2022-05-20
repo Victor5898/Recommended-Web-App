@@ -1,0 +1,65 @@
+<div class="blog" *ngIf="restaurant">
+    <div class="container">
+      <div class="row">
+          <div class="col-4">
+            <div class="card">
+                <img src="{{restaurant.imagePath}}" class="card-img-top img-thumbnail">
+            </div>
+            <div class="card-body">
+                <div>
+                    <strong>Name:</strong>
+                    <p>{{restaurant.name}}</p>
+                </div>
+                <div>
+                    <strong>Address:</strong>
+                    <p>{{restaurant.address}}</p>
+                </div>
+                <div>
+                    <strong>Rating:</strong>
+                    <p>{{restaurant.rating}}</p>
+                    <div>
+                        <div *ngFor='let star of numSequence(restaurant.rating)'>
+                            <span class="fa fa-star checked"></span>
+                          </div>
+                          <div style="display:inline"*ngFor='let star of numSequence(5-restaurant.rating)'>
+                            <span class="fa fa-star"></span>
+                          </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-8">
+              <h2>Description:</h2>
+              <p class="justify">{{restaurant.description}}</p>
+              <div class="review_section">
+                <div class="review_title">
+                    <h6>Reviews</h6>
+                </div>
+                <div class="review_content">
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="user_title">
+                                <p>User</p>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <h6>Comment</h6>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div *ngIf="!restaurant">
+    <h2>You don't have the authorization to access this resouce</h2>
+</div>

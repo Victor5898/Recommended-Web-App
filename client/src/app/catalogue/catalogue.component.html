@@ -1,0 +1,57 @@
+<div class="yellow_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <h2>Restaurants</h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- blog -->
+<div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <i><img src="../../assets/images/title.png" alt="#" /></i>
+
+          <span>There is the list of all restaurants avaiable</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom" *ngFor='let restaurant of restaurants'>
+        <div class="blog_box">
+          <div class="blog_img_box">
+            <figure>
+              <img src="{{restaurant.imagePath}}" alt="#" />
+              <span>{{restaurant.address}}</span>
+            </figure>
+          </div>
+          <h3>{{restaurant.name}}</h3>
+          <p>{{restaurant.description}}</p>
+          <div class="rating">
+            <div class="inline">
+              <span><strong>Rating:  </strong></span>
+              <div *ngFor='let star of numSequence(restaurant.rating)'>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div style="display:inline"*ngFor='let star of numSequence(5-restaurant.rating)'>
+                <span class="fa fa-star"></span>
+              </div>
+              <span>{{restaurant.rating}}</span>
+            </div>
+            <div class="detailButtonDiv">
+              <a class="detailLink" routerLink="/restaurant/{{restaurant.id}}">View details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end blog -->

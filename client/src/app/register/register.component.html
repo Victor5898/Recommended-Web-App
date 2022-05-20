@@ -1,0 +1,41 @@
+<form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+  <div class="container">
+    <h1 class="orange_color">Register</h1>
+    <div class="row">
+      <div class="col">
+        <label for="first_name"><b>First Name</b></label>
+        <input type="text" [(ngModel)]="model.firstName" placeholder="First Name" name="first_name" id="first_name" required>
+
+        <label for="username"><b>Username</b></label>
+        <input type="text" [(ngModel)]="model.username" placeholder="Username" name="username" id="username" required>
+
+        <label for="phone"><b>Phone Number</b></label>
+        <input type="tel" [(ngModel)]="model.phoneNumber" placeholder="Phone Number" name="phone" id="phone" required>
+      </div>
+      <div class="col">
+        <label for="last_name"><b>Last Name</b></label>
+        <input type="text" [(ngModel)]="model.lastName" placeholder="Last Name" name="last_name" id="last_name" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" [(ngModel)]="model.email" placeholder="Email" name="email" id="email" required>
+
+        <label for="birth_date"><b>Birth Date</b></label>
+        <input type="date" placeholder="Birth Date" name="birth_date" id="birth_date" required>
+      </div>
+      <div class="container">
+        <label for="password"><b>Password</b></label>
+        <input type="password" [(ngModel)]="model.password" placeholder="Password" name="password" id="password" required>
+      </div>
+      
+    </div>
+
+    <hr>
+    <p>By creating an account you agree to our <a href="#" class="orange_color">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn" value="Register">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a routerLink="/login" class="orange_color">Sign in</a>.</p>
+  </div>
+</form>

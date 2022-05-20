@@ -1,0 +1,38 @@
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="full">
+          <a class="logo" href="index.html"><img class="img_dim" src="assets/images/logo.png" alt="#" /></a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="full">
+          <div class="right_header_info">
+            <ul>
+              <li>
+                <a class="catalog_link" routerLink="/restaurants">Catalogue</a>
+              </li>
+              <li *ngIf="!loggedIn" class="button_user">
+                <a class="button active" routerLink="/login">Login</a>
+                <a class="button" routerLink="/register">Register</a>
+              </li>
+              <li *ngIf="loggedIn" class="button_user">           
+                <a class="button" (click)="accountService.logout()" routerLink="/">Logout</a>
+              </li>
+              <li *ngIf="loggedIn">
+                <p class="welcome_user">Hello, {{user.userName}}</p>
+              </li>
+              <li><img style="margin-right: 15px;" src="assets/images/search_icon.png" alt="#"></li>
+              <li>
+                <button type="button" id="sidebarCollapse">
+                  <img src="assets/images/menu_icon.png" alt="#">
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
